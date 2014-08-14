@@ -1,6 +1,7 @@
 jQuery ->
   generate_url = (data) ->
-    "http://dickbutt.link/#{data.width}x#{data.height}"
+    base = "#{location.protocol}//#{location.hostname}#{if location.port then ':'+location.port else ''}"
+    "#{base}/#{data.width}x#{data.height}"
 
   update_example = (data) ->
     url = generate_url(data)

@@ -37,6 +37,7 @@ class Dickbutt < Sinatra::Base
   end
 
   get '/' do
+    @url = "#{request.scheme}://#{request.host_with_port}/400x250"
     slim :index
   end
 

@@ -1,0 +1,42 @@
+.header {
+  padding: 60px 0px 60px 0px;
+  background-color: #000000;
+  margin-bottom: 40px;
+  h1, p {
+    color: #FFFFFF;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-size: 60px;
+    margin-top: 0;
+  }
+  p {
+    font-size: 24px;
+    font-weight:300;
+  }
+  img {
+    float:right;
+    &.visible-xs-block {
+      margin-top: 76px;
+    }
+  }
+}
+
+#example-form {
+  input {
+    width: 80px;
+    display: inline-block;
+  }
+  .glyphicon-remove {
+    vertical-align: middle;
+  }
+}
+
+.examples {
+  p {
+    font-weight: 500;
+  }
+  .example {
+    height: 60px;
+  }
+}

@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title Dickbutt.link
+    == css :application, media: 'screen'
+    == js :app
+  body
+    .header
+      .container
+        .row
+        .col-md-8.col-sm-8.col-xs-8
+          h1 Dickbutt.link
+          p Because shouldn't all your placeholders be Dickbutt?
+        .col-md-4.col-sm-4.col-xs-4
+          img.hidden-xs src="/img/brand.png"
+          img.visible-xs-block src="/img/brand_small.png"
+    .content
+      .container
+        .row
+          .col-md-6.col-sm-6
+            legend Try it out!
+            form.form-inline#example-form
+              .form-group
+                label.sr-only for="width" Width
+                input.form-control#width type="number" name="width" placeholder="Width" required="" min="2"
+                span.glyphicon.glyphicon-remove
+                label.sr-only for="height"
+                input.form-control#height type="number" name="height" placeholder="Height" required="" min="2"
+          .col-md-6.col-sm-6.examples
+            p Have a Dickbutt Link:
+            .example#example-link-wrapper.well
+              a href="http://dickbutt.link/400x250" http://dickbutt.link/400x250
+            p Or embed it in your page:
+            .example#example-tag-wrapper.well
+              = "<img src=\"http://dickbutt.link/400x250\">"
+

@@ -2,14 +2,40 @@ require 'sinatra/base'
 require 'mini_magick'
 
 class Dickbutt < Sinatra::Base
+  set :root, File.dirname(__FILE__)
+
+  register Sinatra::AssetPack
+
+  assets do
+    serve '/js', from: 'js'
+    serve '/css', from: 'css'
+    serve '/fonts', from: 'fonts'
+    serve '/img', from: 'img'
+
+    js :app, [
+      '/js/vendor/jquery.js',
+      '/js/vendor/jquery.validate.js',
+      '/js/vendor/bootstrap.js',
+      '/js/main.js'
+    ]
+
+    css :application, [
+      '/css/bootstrap.css',
+      '/css/screen.css'
+    ]
+
+    js_compression :jsmin
+    css_compression :simple
+  end
+
   get '/' do
-    'Dickbutt!'
+    slim :index
   end
 
   get %r{(\d+)x(\d+)} do
     width, height = params[:captures].map{|x| x.to_i}
     content_type "image/jpeg"
-    resize_image File.join('img', 'dickbutt.jpg', width, height
+    resize_image File.join(settings.root, 'img', 'dickbutt.jpg'), width, height
   end
 
   def resize_image(path, width, height)

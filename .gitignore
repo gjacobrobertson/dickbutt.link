@@ -2,3 +2,5 @@
 .tmp
 config/puppet/modules
 .DS_Store
+log
+tmp

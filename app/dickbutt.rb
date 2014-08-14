@@ -3,7 +3,7 @@ require 'mini_magick'
 
 class Dickbutt < Sinatra::Base
   get '/' do
-    'Hello world!'
+    'Dickbutt!'
   end
 
   get %r{(\d+)x(\d+)} do

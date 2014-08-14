@@ -28,7 +28,7 @@ class Dickbutt < Sinatra::Base
       '/css/screen.css'
     ]
 
-    js_compression :jsmin
+    js_compression :uglify
     css_compression :simple
   end
 

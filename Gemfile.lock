@@ -123,6 +123,9 @@ GEM
     timers (1.1.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (2.5.3)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
 
 PLATFORMS
   ruby
@@ -143,3 +146,4 @@ DEPENDENCIES
   slim
   therubyracer
   thin
+  uglifier

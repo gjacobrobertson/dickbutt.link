@@ -9,6 +9,7 @@ gem 'slim'
 gem 'sass'
 gem 'coffee-script'
 gem 'therubyracer'
+gem 'uglifier'
 
 group :development do
   gem 'librarian-puppet'

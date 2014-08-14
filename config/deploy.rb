@@ -49,5 +49,14 @@ namespace :deploy do
     end
   end
 
+  task :compile_assets do
+    on roles(:app) do
+      within release_path do
+        execute :rake, "assetpack:build"
+      end
+    end
+  end
+
+  after :updated, :compile_assets
   after :publishing, :restart
 end

@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/assetpack'
 require 'mini_magick'
 
 class Dickbutt < Sinatra::Base

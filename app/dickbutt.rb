@@ -2,6 +2,9 @@ require 'sinatra/base'
 require 'mini_magick'
 
 class Dickbutt < Sinatra::Base
+  class SizeTooLargeError < RuntimeError
+  end
+  MAX_SIZE = 4096
   set :root, File.dirname(__FILE__)
 
   register Sinatra::AssetPack
@@ -28,12 +31,20 @@ class Dickbutt < Sinatra::Base
     css_compression :simple
   end
 
+  error SizeTooLargeError do
+    'The requested image is too large'
+  end
+
   get '/' do
     slim :index
   end
 
   get %r{(\d+)x(\d+)} do
     width, height = params[:captures].map{|x| x.to_i}
+    if width > MAX_SIZE or height > MAX_SIZE
+      raise SizeTooLargeError,''
+    end
+
     content_type "image/jpeg"
     resize_image File.join(settings.root, 'img', 'dickbutt.jpg'), width, height
   end

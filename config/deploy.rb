@@ -29,7 +29,7 @@ set :pty, true
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle}
 
 # Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :default_env, { rack_env: fetch(:stage).to_s }
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5

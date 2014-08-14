@@ -1,0 +1,23 @@
+{
+  "builders": [
+    {
+      "type": "digitalocean",
+      "droplet_name":"dickbutt.link",
+      "image": "ubuntu-14-04-x64",
+      "region": "nyc2",
+      "size": "512mb",
+      "snapshot_name": "packer.dickbutt-{{timestamp}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "script/install_puppet.sh"
+    },
+    {
+      "type": "puppet-masterless",
+      "manifest_file": "config/puppet/manifests/production.pp",
+      "module_paths": ["config/puppet/modules"]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+.librarian
+.tmp
+config/puppet/modules
+.DS_Store

@@ -1,0 +1,22 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    alup-rbenv (1.2.0)
+    jfryman-nginx (0.0.10)
+      puppetlabs-apt (>= 1.0.0)
+      puppetlabs-concat (>= 1.1.0)
+      puppetlabs-stdlib (>= 3.0.0)
+    puppetlabs-apt (1.6.0)
+      puppetlabs-stdlib (>= 2.2.1)
+    puppetlabs-concat (1.1.0)
+      puppetlabs-stdlib (>= 4.0.0)
+    puppetlabs-git (0.2.0)
+      puppetlabs-vcsrepo (>= 0.1.0)
+    puppetlabs-stdlib (4.3.2)
+    puppetlabs-vcsrepo (1.1.0)
+
+DEPENDENCIES
+  alup-rbenv (>= 0)
+  jfryman-nginx (>= 0)
+  puppetlabs-git (>= 0)
+

@@ -32,7 +32,7 @@ class Dickbutt < Sinatra::Base
   end
 
   error SizeTooLargeError do
-    'The requested image is too large'
+    'The requested dickbutt is too large'
   end
 
   get '/' do
@@ -42,7 +42,7 @@ class Dickbutt < Sinatra::Base
   get %r{(\d+)x(\d+)} do
     width, height = params[:captures].map{|x| x.to_i}
     if width > MAX_SIZE or height > MAX_SIZE
-      raise SizeTooLargeError,''
+      raise SizeTooLargeError
     end
 
     content_type "image/jpeg"

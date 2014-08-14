@@ -9,7 +9,7 @@ class Dickbutt < Sinatra::Base
   get %r{(\d+)x(\d+)} do
     width, height = params[:captures].map{|x| x.to_i}
     content_type "image/jpeg"
-    resize_image "img/dickbutt.jpg", width, height
+    resize_image File.join('img', 'dickbutt.jpg', width, height
   end
 
   def resize_image(path, width, height)

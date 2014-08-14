@@ -38,5 +38,16 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle}
 set :rbenv_ruby, '2.1.2'
 
 namespace :deploy do
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      within current_path do
+        if test "[ -f #{current_path.join('tmp/pids/thin.pid')} ]"
+          invoke 'deploy:stop'
+        end
+        invoke 'deploy:start'
+      end
+    end
+  end
+
   after :publishing, :restart
 end

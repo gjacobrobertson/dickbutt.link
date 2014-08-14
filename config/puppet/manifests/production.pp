@@ -5,6 +5,10 @@ node 'dickbutt.link' {
     ensure => "installed",
   }
 
+  package { 'imagemagick': 
+    ensure => "installed",
+  }
+
   class { 'nginx': }
 
   nginx::resource::upstream { 'dickbutt':
